@@ -1,0 +1,377 @@
+<mat-toolbar >
+  <button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+
+  Matrix App
+
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+  
+  <mat-sidenav #sidenav="matSidenav">
+
+
+    <img id = "img-side-logo" class ="avatar mat-elevation-z8" src="./assets/image/bmw-m5-cs-ai-01.jpg.asset.1611072239688.jpg"/>
+
+    <h4 class="name" >Meshailen</h4>
+    <p class="designation">Chief Technology Officer</p>
+
+    <mat-divider></mat-divider>
+    <!--Home   -->
+    <button mat-button class="menu-button" routerLink="/WorkerDetails">
+      <mat-icon>home</mat-icon>
+      <span>Dashboard</span>
+      
+    </button >
+    <br>
+    <!-- Employee -->
+    <button mat-button class="menu-button" routerLink="/mod">
+      <mat-icon>person</mat-icon>
+        <span>Employee</span>
+    </button>
+    <br>
+    <button mat-button class="menu-button" routerLink="/HumanResources">
+      <mat-icon>group</mat-icon>
+        <span>Human Resources</span>
+    </button>
+    <br>
+    <!-- Accounts -->
+    <button mat-button class="menu-button" routerLink="/EmpAccounts">
+      <mat-icon routerLink="/EmpAccounts">account_circle</mat-icon>
+        <span>Accounts</span>
+    </button>
+    <br>
+
+    <!-- Projectss -->
+    <button mat-button class="menu-button" routerLink="/CibaProjects">
+      <mat-icon >ballot</mat-icon>
+        <span >Projects</span>
+    </button>
+    <br>
+
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- <img src="https://images.unsplash.com/photo-1621655543673-378d71be2a06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" height="150" width="150" alt="Avatar"> -->
+    <div id="ele-z4" class="content mat-elevation-z4">
+      <!-- <img id="edit-img" src="https://images.unsplash.com/photo-1621655543673-378d71be2a06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"  height="150" width="150" alt="Avatar"> -->
+      
+      <router-outlet>
+        <div>  
+  
+          <br>
+          <div class="container" style="width: 65vw; height:50vh; margin:20px ;position:static; overflow-y: scroll; margin-top: 10%;  border-radius: 8px;background-repeat: no-repeat; padding: 5%;" id="container">
+        
+            <input [(ngModel)]="searchText" type="text"class="form-control" placeholder="Search"style="margin: 10px auto; width: 30vw; position: static; margin-top: 10px" #nav1>
+            <table class="table table-bordered" style="border: none;padding-left: 10%;">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Surname</th>
+                  <th>Age</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Status</th>
+                  <th>Team</th>
+                  <th>Edit</th>
+                  <th>New</th>
+                </tr>
+              </thead>
+              <tbody class="tbody">
+                <tr *ngFor="let employee of employeeDetails | employeeFilterPipe:searchText">
+                  <td>{{employee.name}}</td>
+                  <td>{{employee.surname}}</td>
+                  <td>{{employee.age}}</td>
+                  <td>{{employee.phone}}</td>
+                  <td>{{employee.address}}</td>
+                  <td>{{employee.status}}</td>
+                  <td>{{employee.team}}</td>
+                
+                  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MyModalCenter"
+                      (click)="edit(employee)" (click)= "scrollToElement(location1)">Edit</button></td>
+                  <td><button type="button" class="btn btn-success" routerLink="/createEmployee">New</button></td>
+                  
+                </tr>
+              </tbody>
+            </table>
+        
+          </div>  
+        
+        
+          <!-- <div class="vertical-menu" style="position: fixed; float: left;width: auto; margin-left: 65vw;margin-top: -75vh;">
+            
+            <br>
+              <a button (click)= "scrollToElement(nav1)" class="active">Personal Details</a>
+              <a button (click)= "scrollToElement(nav2)">Documents</a>
+              <a button (click)= "scrollToElement(nav3)">Addendum</a>
+              <a button (click)= "scrollToElement(nav4)">FOO / PO</a>
+              <a button (click)= "scrollToElement(nav5)">Payslip</a>
+              <a button (click)= "scrollToElement(nav6)">Company Documents</a>
+              <a button (click)= "scrollToElement(nav7)">Performance Review</a>
+              <a button (click)= "scrollToElement(nav8)">Archive</a>
+            <br>
+          </div> -->
+        
+          <!-- 
+        
+          <form #updateForm="ngForm" (ngSubmit)="updateEmployee()" style="width: 40vw;border: none; padding: 5%;">
+              <br>
+              <div class="form-group" #location1 #nav>
+                <label for="name">Employee Name :</label>
+                <input type="text" #name [(ngModel)]="employeeToUpdate.name" name="name" id="name" class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="surname">Employee Surname :</label>
+                <input type="text" #surname [(ngModel)]="employeeToUpdate.surname" name="surname" id="surname" class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="age">Employee age :</label>
+                <input type="number" #address [(ngModel)]="employeeToUpdate.age" name="age" id="age" class="form-control" >
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="phone">Employee phone :</label>
+                <input type="text" #phone [(ngModel)]="employeeToUpdate.phone" name="phone" id="phone" class="form-control" >
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="address">Employee address :</label>
+                <input type="text" #address [(ngModel)]="employeeToUpdate.address" name="address" id="address" class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="status">Employee status :</label>
+                <input type="text" #status [(ngModel)]="employeeToUpdate.status" name="status" id="status"
+                  class="form-control" >
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="startDate">Employee startDate :</label>
+                <input type="text" #startDate [(ngModel)]="employeeToUpdate.startDate" name="startDate" id="startDate"
+                  class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="team">Employee team :</label>
+                <input type="text" #team [(ngModel)]="employeeToUpdate.team" name="team" id="team" class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="previousIncrease">Employee previousIncrease :</label>
+                <input type="text" #previousIncrease [(ngModel)]="employeeToUpdate.previousIncrease" name="previousIncrease" id="previousIncrease"
+                  class="form-control">
+              </div>
+              <br> 
+              <div class="form-group">
+                <label for="billingRate">Employee billingRate :</label>
+                <input type="text" #billingRate [(ngModel)]="employeeToUpdate.billingRate" name="billingRate" id="billingRate"
+                  class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="timesheet">Employee Timesheet :</label>
+                <input type="text" #timesheet [(ngModel)]="employeeToUpdate.timesheet" name="timesheet" id="timesheet"
+                  class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="payment_type">Employee Payment Type :</label>
+                <input type="text" #payment_type [(ngModel)]="employeeToUpdate.payment_type" name="payment_type" id="payment_type"
+                  class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="supplier">Employee Supplier :</label>
+                <input type="text" #supplier [(ngModel)]="employeeToUpdate.supplier" name="supplier" id="supplier"
+                  class="form-control">
+              </div>
+              <br>
+              <div class="form-group">
+                <input type="submit" value="Update" (click)="reloadPage()" class="btn btn-primary w-100">
+              </div>
+          </form> -->
+        
+            <br>
+        
+              <!-- <div id="div-doc">
+                  <h1 #nav2>Documents</h1>
+                  <app-file-upload></app-file-upload>
+        
+        
+              </div>
+              <br>
+                  <h1 #nav3>Addendum</h1>
+              <br>
+              <div>
+                  <h1 #nav4>FOO / PO</h1>
+                  <app-file-upload></app-file-upload>
+              </div>
+              <br>
+              <div>
+                  <h1 #nav5>Payslip</h1>
+                  <app-file-upload></app-file-upload>
+                  <a ></a>
+              </div>
+              <br>
+              <div>
+                  <h1 #nav6>Company Documents</h1>
+                  <app-file-upload></app-file-upload>
+              </div>
+              <br>
+              <div>
+                  <h1 #nav7>Performance Review</h1>
+                  <app-file-upload></app-file-upload>
+              </div>
+              <br>
+              <div>
+                  <h1 #nav8>Archive</h1>
+                  <app-file-upload></app-file-upload>
+              </div>
+              <br> -->
+          <br>
+          <h3>Personal Details:</h3>
+          <div #location1 >
+            <form #updateForm="ngForm" (ngSubmit)="updateEmployee()">
+              <div class="col-md-6" style="width: 30vw; height:20vh; margin:20px ;position:static;float: left;">
+        
+              
+                <label for="name">Name</label>
+                <input type="text" #name [(ngModel)]="employeeToUpdate.name" name="name" id="name" class="form-control">
+        
+                <label for="surname">Surname</label>
+                <input type="text" #surname [(ngModel)]="employeeToUpdate.surname" name="surname" id="surname" class="form-control">
+        
+                <label for="age">Age</label>
+                <input type="number" #address [(ngModel)]="employeeToUpdate.age" name="age" id="age" class="form-control" >
+        
+                <label for="phone">Phone</label>
+                <input type="text" #phone [(ngModel)]="employeeToUpdate.phone" name="phone" id="phone" class="form-control" >
+        
+                <label for="address">Address</label>
+                <input type="text" #address [(ngModel)]="employeeToUpdate.address" name="address" id="address" class="form-control">
+                <br>
+                <!-- <label for="supplier">Supplier</label>
+                <input type="text" #supplier [(ngModel)]="employeeToUpdate.supplier" name="supplier" id="supplier" class="form-control"> -->
+                <mat-form-field appearance="fill">
+                  <mat-label for="supplier">Supplier</mat-label>
+                      <mat-select  [(ngModel)]="employeeToUpdate.supplier" id="supplier" name="supplier"  type="text">
+                          <mat-option value ="ABSA">ABSA</mat-option>
+                          <mat-option value ="AGOC">AGOC</mat-option>
+                          <mat-option value ="Anvisoft">Anvisoft</mat-option>
+                          <mat-option value ="CIBA Recruitment">CIBA Recruitment</mat-option>
+                          <mat-option value ="Inkonzo">Inkonzo</mat-option>
+                          <mat-option value ="Orchid">Orchid</mat-option>
+                          <mat-option value ="People-solved">People-solved</mat-option>
+                          <mat-option value ="Positron">Positron</mat-option>
+                          <mat-option value ="Pro-Think">Pro-Think</mat-option>
+                          <mat-option value ="RFP">RFP</mat-option>
+                          <mat-option value ="SBK">SBK</mat-option>
+                          <mat-option value ="Siri">Siri</mat-option>
+                      </mat-select>
+                </mat-form-field>
+                <br>
+        
+                <label for="startDate">StartDate</label>
+                <input type="text" #startDate [(ngModel)]="employeeToUpdate.startDate" name="startDate" id="startDate" class="form-control">
+                <br>
+              </div>
+              <div class="col-md-6" style="width: 30vw; height:20vh; margin:20px ;position:static;float: right;">
+        
+                <!-- <label >Team</label> -->
+                <!-- <input type="text" #team [(ngModel)]="employeeToUpdate.team" name="team" id="team" class="form-control"> -->
+                <mat-form-field appearance="fill">
+                  <mat-label for="team">Team</mat-label>
+                      <mat-select  [(ngModel)]="employeeToUpdate.team" id="team" name="team"  type="text">
+                        <mat-option value ="AFRCTO">AFRCTO</mat-option>
+                        <mat-option value ="AFRICA PAYMENTS">AFRICA PAYMENTS</mat-option>
+                        <mat-option value ="ARO TECHNOLOGY">ARO TECHNOLOGY</mat-option>
+                        <mat-option value ="ARO TECHNOLOGY - GRADS">ARO TECHNOLOGY GRADS</mat-option>
+                        <mat-option value ="ARO TECHNOLOGY - JNR JAVA DEVS">ARO TECHNOLOGY - JNR JAVA DEVS</mat-option>
+                        <mat-option value ="CIBA" >CIBA Head Office</mat-option>
+                        <mat-option value ="CORPORATE">CORPORATE</mat-option>
+                        <mat-option value ="FIN CRIME">FIN CRIME</mat-option>
+                        <mat-option value ="FUNCTIONS TECH">FUNCTIONS TECH</mat-option>
+                        <mat-option VALUE ="INKONZO TECHNOLOGIES">INKONZO TECHNOLOGIES</mat-option>
+                        <mat-option value ="INTERNATIONAL PAYMENTS">INTERNATIONAL PAYMENTS</mat-option>
+                        <mat-option value ="SA - CORP">SA CORP</mat-option>
+                        <mat-option value ="STEYN CITY">Steyn City</mat-option>
+                    </mat-select>
+                </mat-form-field> 
+                <br>  
+        
+                <label for="previousIncrease">PreviousIncrease</label>
+                <input type="text" #previousIncrease [(ngModel)]="employeeToUpdate.previousIncrease" name="previousIncrease" id="previousIncrease" class="form-control">
+        
+                <label for="billingRate">BillingRate</label>
+                <input type="text" #billingRate [(ngModel)]="employeeToUpdate.billingRate" name="billingRate" id="billingRate" class="form-control">
+        
+                <!-- <label for="timesheet">Timesheet</label> -->
+                <!-- <input type="text" #timesheet [(ngModel)]="employeeToUpdate.timesheet" name="timesheet" id="timesheet" class="form-control"> -->
+                <br>
+                <mat-form-field appearance="fill">
+                  <mat-label for="timesheet">Timesheet</mat-label>
+                      <mat-select  [(ngModel)]="employeeToUpdate.timesheet" id="timesheet" name="timesheet"  type="text">
+                          <mat-option value ="Coupa">Coupa</mat-option>
+                          <mat-option value ="Manual">Manual</mat-option>
+                      </mat-select>
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+                <br>
+        
+                <!-- <label for="payment_type">Payment Type</label>
+                <input type="text" #payment_type [(ngModel)]="employeeToUpdate.payment_type" name="payment_type" id="payment_type" class="form-control"> -->
+                <mat-form-field appearance="fill">
+                  <mat-label for="payment_type">Payment Type</mat-label>
+                      <mat-select  [(ngModel)]="employeeToUpdate.payment_type" id="payment_type" name="payment_type"  type="text">
+                          <mat-option value ="Invoice - Independant Contractors">Invoice - Independant Contractors</mat-option>
+                          <mat-option value ="Invoice - Suppliers">Invoice - Suppliers</mat-option>
+                          <mat-option value ="Payroll - AGOC">Payroll - AGOC</mat-option>
+                          <mat-option value ="Payroll - CIBA">Payroll - CIBA</mat-option>
+                      </mat-select>
+                </mat-form-field>
+                <br>
+        
+                <!-- <label for="status">Status</label>
+                <input type="text" #status [(ngModel)]="employeeToUpdate.status" name="status" id="status" class="form-control" > -->
+                <mat-form-field appearance="fill">
+                  <mat-label for="status">Status</mat-label>
+                      <mat-select  [(ngModel)]="employeeToUpdate.status" id="status" name="status"  type="text">
+                          <mat-option value="True" >Active</mat-option>
+                          <mat-option value ="False">Inactive</mat-option>
+                      </mat-select>
+                </mat-form-field>
+                <br>
+                <input type="submit" value="Update" (click)="reloadPage()" class="btn btn-primary w-100">
+                <br>
+              
+              </div>
+              <br>
+              
+            </form>
+          </div>
+        
+        </div>
+      </router-outlet>
+      
+    </div>
+    
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
+
+
+
+
+
+        
+  

@@ -1,0 +1,36 @@
+<div class="container">
+    <header class="jumbotron">
+      <p>{{ content }}</p>
+      <h2 style="color: black; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Timesheet Submission</h2>
+    </header>
+  </div>
+  <!-- Add Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- Add Angular dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/3.3.6/ui-bootstrap.min.js"></script>
+
+  <!-- index.html -->
+<!-- timesheet.component.html -->
+<div class="container">
+  <h1>Timesheet</h1>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Task</th>
+        <th>Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="entry in timesheetEntries">
+        <td>123</td>
+        <td>123</td>
+        <td>abc</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

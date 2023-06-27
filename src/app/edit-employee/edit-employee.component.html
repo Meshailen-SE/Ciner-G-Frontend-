@@ -1,0 +1,165 @@
+<body >
+    <br #location1>
+    <div style="width: 14.6vw; float:left; height:50vh; margin:10px; position:static;" >
+        
+        <img id="img-emp" src="https://images.unsplash.com/photo-1674021904638-f0e7eed16a6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8Q0R3dXdYSkFiRXd8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" height="160" width="160" alt="Avatar">
+        
+        <div class="vertical-menu" style="position: fixed; float: left;width: auto;">
+        <br>
+        <a button (click)= "scrollToElement(location1)" class="active">Personal Details</a>
+        <a button (click)= "scrollToElement(location2)">Documents</a>
+        <a button (click)= "scrollToElement(location3)">Addendum</a>
+        <a button (click)= "scrollToElement(location4)">FOO / PO</a>
+        <a button (click)= "scrollToElement(location5)">Payslip</a>
+        <a button (click)= "scrollToElement(location6)">Company Documents</a>
+        <a button (click)= "scrollToElement(location7)">Performance Review</a>
+        <a button (click)= "scrollToElement(location8)">Archive</a>
+        <br>
+        </div>
+    </div>
+    
+    <div style="width: 50vw; height:65vh; margin:10px ;position:static;float: left;" >
+        <main >
+            
+            <div  id="con-fluid">
+            
+            <div id = "div-2" class="card" >
+                
+                <!-- <div id="edit-head" class="card-header">
+                    Edit Employee
+                </div> -->
+                
+                <div class="card-body" id = "card-body" > 
+
+                    <!-- <ul>
+                        <li id="test_list" *ngFor="let s of employees " class="list-group-item" style="width: 18vw;">
+                            
+                            <label for="name">Name</label>
+                            <input value={{s.id}}:{{s.name}} style="width: 15vw;">
+                        </li>
+                    </ul> -->
+
+                    <form #updateForm ="ngForm"  style="float:left">
+                        <label for="id" id="lab-nam" >ID</label>
+                        <div class="form-group">
+                            <input  id="input-text" name="id" class="form-control" [(ngModel)]="employeeToUpdate.id" type="text" >
+                        </div> 
+                        
+                        <br>
+                        <label for="name" id="lab-nam">Name</label>
+                        <div class="form-group" >
+                            <input [(ngModel)]="employeeToUpdate.name" id="input-text" name="name" class="form-control" type="text"  >
+                        </div>
+                        <br>
+    
+                        <label for="age" id="lab-nam">Age</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.age" id="input-text" name="age" class="form-control" type="text" >
+                        </div>
+                        <br>
+    
+                        <label for="phone" id="lab-nam">Phone</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.phone" id="input-text" name="phone" class="form-control" type="text">
+                        </div>
+                        <br>
+    
+                        <label for="address" id="lab-nam">Email Address</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.address" name="address" id="input-text" class="form-control" type="text">
+                        </div>
+                        <br>
+    
+                        <label for="status" id="lab-nam">Status</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.status" name="status" id="input-text" class="form-control" type="text">
+                        </div>
+                        <br>
+
+                        <label for="startDate" id="lab-nam">Start Date</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.startDate" name="startDate" id="input-text" class="form-control" ng-model="Employee.name"  type="date" >
+                        </div>
+                        <br>
+                        <label for="team" id="lab-nam">Team</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.team" name="team" id="input-text" class="form-control" type="text">
+                        </div>
+                        <br>
+                        <label for="billingRate" id="lab-nam">Billing Rate</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.billingRate" name="billingRate" id="input-text" class="form-control" type="text">
+                        </div>
+                        <br>
+                        <label for="previousIncrease" id="lab-nam">Previous Increase</label>
+                        <div class="form-group">
+                            <input [(ngModel)]="employeeToUpdate.previousIncrease" name="previousIncrease" id="input-text" class="form-control" type="date">
+                        </div>
+                        <br>
+                        
+                        <button class="btn btn-primary" id="btn-save" >Save</button>
+    
+                        
+                    </form>
+                    
+                </div>
+    
+                <div class="card-footer" *ngIf="showAlert">
+                    <div class="alert alert-success">
+                        <button (click)="closeAlert() " routerLink="/Employee" class="close">
+                            &times;
+                        </button>
+                        <strong>Success</strong>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            </div>
+        </main>
+    <br>
+    
+    <br>
+
+    <!-- Documents -->
+        <div id="div-doc">
+            <h1 #location2>Documents</h1>
+            <app-file-upload></app-file-upload>
+        </div>
+    
+    
+        <br>
+        <div>
+            <h1 #location3>Addendum</h1>
+            <app-file-upload></app-file-upload>
+        </div>
+        <br>
+        <div>
+            <h1 #location4>FOO / PO</h1>
+            <app-file-upload></app-file-upload>
+        </div>
+        <br>
+        <div>
+            <h1 #location5>Payslip</h1>
+            <app-file-upload></app-file-upload>
+            <a ></a>
+        </div>
+        <br>
+        <div>
+            <h1 #location6>Company Documents</h1>
+            <app-file-upload></app-file-upload>
+        </div>
+        <br>
+        <div>
+            <h1 #location7>Performance Review</h1>
+            <app-file-upload></app-file-upload>
+        </div>
+        <br>
+        <div>
+            <h1 #location8>Archive</h1>
+            <app-file-upload></app-file-upload>
+        </div>
+        <br>
+    </div>
+    </body>
+    <router-outlet></router-outlet>
+    

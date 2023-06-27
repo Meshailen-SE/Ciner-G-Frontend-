@@ -1,0 +1,25 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* #lab-name{
+    text-transform: lowercase;
+} */
+
+#container{
+    /* margin-left: 20%; */
+    margin :10%;
+    background-color: rgb(221, 221, 221);
+    border-radius: 8px;
+}
+form{
+    padding: 2%;
+    /* margin: 10%; */
+}
+input{
+    /* min-width:min-content; */
+    max-width:30vw;
+}
+
+/* #maindiv{ */
+    /* background-image:url("https://img.freepik.com/free-photo/modern-futuristic-sci-fi-background_35913-2150.jpg?size=626&ext=jpg") ; */
+    /* /* src="./assets/image/CibaBot.JPG" */
+/* } */

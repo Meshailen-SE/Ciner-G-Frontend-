@@ -1,0 +1,167 @@
+<div id="maindiv" style="width:100vw ; height: 130vh; background-image:url(https://img.freepik.com/free-vector/abstract-technology-particle-background_23-2148314004.jpg?size=626&ext=jpg)">
+    <div id ="leftDiv" class="form-group" style="width:50vw;float:left ;" >
+        
+        <div class="form-group" id ="container">
+            
+            <div class="form-group" id="add-div">
+                <form>
+
+                    <div class="form-group">
+                        <label for="name" id="lab-name">Name</label>
+                        <input class="form-control" [(ngModel)]="employee.name" id="name" name="name" class="form-control" type="text" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surname" id="lab-1">Surame</label>
+                        <input class="form-control" [(ngModel)]="employee.surname" id="surname" name="surname" class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age" id="lab-1">Age</label>
+                        <input class="form-control" [(ngModel)]="employee.age" id="age" name="age" class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" id="lab-1">Phone</label>
+                        <input class="form-control" [(ngModel)]="employee.phone" id="phone" name="phone" class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address" id="lab-1">Email Address</label>
+                        <input class="form-control" [(ngModel)]="employee.address" name="address" id="address" class="form-control" type="text">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="startDate" id="lab-1">Start Date</label>
+                        <input class="form-control" [(ngModel)]="employee.startDate" id="startDate" name="startDate" class="form-control" type="date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="billingRate" id="lab-1">Billing Rate</label>
+                        <input class="form-control" [(ngModel)]="employee.billingRate" id="tebillingRateam" name="billingRate" class="form-control" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="previousIncrease" id="lab-1">Previous Increase</label>
+                        <input class="form-control" [(ngModel)]="employee.previousIncrease" id="previousIncrease" name="previousIncrease" class="form-control" type="date">
+                    </div>
+                    <br>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div  class="form-group" style="width:45vw ;float:right;background-image:url(https://img.freepik.com/free-vector/abstract-technology-particle-background_23-2148314004.jpg?size=626&ext=jpg)">
+        <div class="form-group" id ="container">
+            <h3></h3>
+            <div class="form-group" id="add-div">
+                <form>
+                    <label for="team" id="lab-1">Team</label>
+                    <div class="form-group">
+                        <!-- <input class="form-control" [(ngModel)]="employee.team" id="team" name="team" class="form-control" type="text"> -->
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select</mat-label>
+                                <mat-select  [(ngModel)]="employee.team" id="team" name="team"  type="text">
+                                    <mat-option value ="AFRCTO">AFRCTO</mat-option>
+                                    <mat-option value ="AFRICA PAYMENTS">AFRICA PAYMENTS</mat-option>
+                                    <mat-option value ="ARO TECHNOLOGY">ARO TECHNOLOGY</mat-option>
+                                    <mat-option value ="ARO TECHNOLOGY - GRADS">ARO TECHNOLOGY GRADS</mat-option>
+                                    <mat-option value ="ARO TECHNOLOGY - JNR JAVA DEVS">ARO TECHNOLOGY - JNR JAVA DEVS</mat-option>
+                                    <mat-option value ="CIBA" >CIBA Head Office</mat-option>
+                                    <mat-option value ="CORPORATE">CORPORATE</mat-option>
+                                    <mat-option value ="FIN CRIME">FIN CRIME</mat-option>
+                                    <mat-option value ="FUNCTIONS TECH">FUNCTIONS TECH</mat-option>
+                                    <mat-option VALUE ="INKONZO TECHNOLOGIES">INKONZO TECHNOLOGIES</mat-option>
+                                    <mat-option value ="INTERNATIONAL PAYMENTS">INTERNATIONAL PAYMENTS</mat-option>
+                                    <mat-option value ="SA - CORP">SA CORP</mat-option>
+                                    <mat-option value ="STEYN CITY">Steyn City</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                        
+                    </div>
+                    
+                    
+                    
+                    <label for="timesheet" id="lab-1">Timesheet</label>
+                    <div class="form-group">
+                        <!-- <input class="form-control" [(ngModel)]="employee.timesheet" id="timesheet" name="timesheet" class="form-control" type="text"> -->
+                        
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select</mat-label>
+                                <mat-select  [(ngModel)]="employee.timesheet" id="timesheet" name="timesheet"  type="text">
+                                    <mat-option value ="Coupa">Coupa</mat-option>
+                                    <mat-option value ="Manual">Manual</mat-option>
+                                </mat-select>
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                        </mat-form-field>
+                        
+                    </div>
+
+                    <label for="payment_type" id="lab-1">Payment Type</label>
+                    <div class="form-group">
+                        <!-- <input class="form-control" [(ngModel)]="employee.payment_type" id="payment_type" name="payment_type" class="form-control" type="text"> -->
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select</mat-label>
+                                <mat-select  [(ngModel)]="employee.payment_type" id="payment_type" name="payment_type"  type="text">
+                                    <mat-option value ="Invoice - Independant Contractors">Invoice - Independant Contractors</mat-option>
+                                    <mat-option value ="Invoice - Suppliers">Invoice - Suppliers</mat-option>
+                                    <mat-option value ="Payroll - AGOC">Payroll - AGOC</mat-option>
+                                    <mat-option value ="Payroll - CIBA">Payroll - CIBA</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <label for="supplier" id="lab-1">Supplier</label>
+                    <div class="form-group">
+                        <!-- <input class="form-control" [(ngModel)]="employee.supplier" id="supplier" name="supplier" class="form-control" type="text"> -->
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select</mat-label>
+                                <mat-select  [(ngModel)]="employee.supplier" id="supplier" name="supplier"  type="text">
+                                    <mat-option value ="ABSA">ABSA</mat-option>
+                                    <mat-option value ="AGOC">AGOC</mat-option>
+                                    <mat-option value ="Anvisoft">Anvisoft</mat-option>
+                                    <mat-option value ="CIBA Recruitment">CIBA Recruitment</mat-option>
+                                    <mat-option value ="Inkonzo">Inkonzo</mat-option>
+                                    <mat-option value ="Orchid">Orchid</mat-option>
+                                    <mat-option value ="People-solved">People-solved</mat-option>
+                                    <mat-option value ="Positron">Positron</mat-option>
+                                    <mat-option value ="Pro-Think">Pro-Think</mat-option>
+                                    <mat-option value ="RFP">RFP</mat-option>
+                                    <mat-option value ="SBK">SBK</mat-option>
+                                    <mat-option value ="Siri">Siri</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- <br> -->
+                    <label for="status" id="lab-1">Status</label>
+                    <div class="form-group">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select</mat-label>
+                                <mat-select  [(ngModel)]="employee.status" id="status" name="status"  type="boolean">
+                                    <mat-option value="True" >True</mat-option>
+                                    <mat-option value ="False">False</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <button class="btn btn-primary" (click)="saveEmployee()" routerLink="/Employee" style="width:10vw">Save</button>
+                    <br>
+                </form>
+            </div>
+
+            <div class="card-footer" *ngIf="showAlert">
+                <div class="alert alert-success">
+                    <button (click)="closeAlert()" class="close">
+                        &times;
+                    </button>
+                    <strong>Success</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+    </div>
+</div>

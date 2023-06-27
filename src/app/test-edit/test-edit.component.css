@@ -1,0 +1,46 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+th{
+    border:none;
+    background-color: rgb(221, 220, 220);
+}
+td{
+    border: none;
+}
+tr{
+    border: none;
+    background-color: rgb(221, 220, 220);
+}
+tr:nth-child(2n+2){
+    background-color: rgb(243, 243, 243);
+    
+}
+/* #name{
+  text-transform: lowercase;
+} */
+
+.vertical-menu {
+    width: 200px;
+    margin-top: 0vh;
+  }
+  
+  .vertical-menu a {
+    background-color: #eeeeee;
+    color: black;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc;
+
+  }
+  
+  .vertical-menu a.active {
+    background-color: #1f99eb;
+    color: white;
+  }
+
+#container{
+  background-color: rgb(1, 47, 65);
+}

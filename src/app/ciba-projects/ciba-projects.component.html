@@ -1,0 +1,174 @@
+
+<mat-toolbar >
+  <button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+
+  Matrix App
+
+</mat-toolbar>
+
+
+<mat-sidenav-container style="background-color: rgb(1, 30, 56);">
+  
+  <mat-sidenav #sidenav="matSidenav">
+
+
+    <img id = "img-side-logo" class ="avatar mat-elevation-z8" src="./assets/image/bmw-m5-cs-ai-01.jpg.asset.1611072239688.jpg"/>
+
+    <h4 class="name" >Meshailen</h4>
+    <p class="designation">Chief Technology Officer</p>
+
+    <mat-divider></mat-divider>
+    <!--Home   -->
+    <button mat-button class="menu-button" routerLink="/WorkerDetails">
+      <mat-icon>home</mat-icon>
+      <span>Dashboard</span>
+      
+    </button >
+    <br>
+    <!-- Employee -->
+    <button mat-button class="menu-button" routerLink="/mod">
+      <mat-icon>person</mat-icon>
+        <span>Employee</span>
+    </button>
+    <br>
+    <button mat-button class="menu-button" routerLink="/HumanResources">
+      <mat-icon>group</mat-icon>
+        <span>Human Resources</span>
+    </button>
+    <br>
+    <!-- Accounts -->
+    <button mat-button class="menu-button" routerLink="/EmpAccounts">
+      <mat-icon routerLink="/EmpAccounts">account_circle</mat-icon>
+        <span>Accounts</span>
+    </button>
+    <br>
+
+    <!-- Projectss -->
+    <button mat-button class="menu-button" routerLink="/CibaProjects">
+      <mat-icon >ballot</mat-icon>
+        <span >Projects</span>
+    </button>
+    <br>
+
+    
+  </mat-sidenav>
+ 
+  <div class="vertical-menu" style="position: fixed; float: left;margin-top: 7vh;">
+    
+    <br>
+      <a button (click)= "scrollToElement(nav1)" >CIBA HQ</a>
+      <a button (click)= "scrollToElement(nav3)">Automation Anywhere</a>
+      <a button (click)= "scrollToElement(nav1)">Contractors</a>
+      <!-- <a button (click)= "scrollToElement(nav1)">FOO</a>
+      <a button (click)= "scrollToElement(nav1)">PO</a>
+      <a button (click)= "scrollToElement(nav1)">Payslip</a> -->
+      
+      
+    <br>
+  </div>
+  <h3 style="text-align: center; color: white;">Meet The Team</h3>
+
+  <div class="container" >
+    <br>
+    <!-- Sean -->
+    <div class="cell cell-1"#nav1>
+      <div>
+        <img src="./assets/image/1678343033929.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Sean Ammon</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+
+    <!-- Shan -->
+    <div class="cell cell-2">
+      <div>
+        <img src="./assets/image/1683712928149.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Shan Naidoo</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+    <!-- Meshailen -->
+    <div class="cell cell-3">
+      <div>
+        <img src="./assets/image/1649704948905.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Meshailen Chetty</a>
+      <a href = "https://wa.me/+27641172074" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+    <br>
+    <!-- Michaela -->
+    <div class="cell cell-4">
+      <div>
+        <img src="./assets/image/1657172617624.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Michaela Santana</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+    <!-- Alessia -->
+    <div class="cell cell-5">
+      <div>
+        <img src="./assets/image/1517884295698.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Alessia Massaro</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+    <!-- Damian -->
+    <div class="cell cell-6">
+      <div>
+        <img src="./assets/image/1661731691508.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Damian Lancellas</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+    <br>
+    <!-- Mandy -->
+    <div class="cell cell-7"><div>
+      <img src="./assets/image/1676379913838.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Mandy Leonard</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+    <!-- Jade -->
+    <div class="cell cell-8" #nav2>
+      <div>
+        <img src="./assets/image/1643246394174.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Jade Somerville</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div>
+
+    <div class="cell cell-9">
+      <div>
+        <img src="./assets/image/CIBA Bot plain.jpeg" class="rounded-circle" style="height:180px; width: 190px;" >
+      </div>
+      <br>
+      <a class="e-btn e-link sf-icon-telephone" href="tel:0641172074" style="background-color: aliceblue;"><mat-icon style="float:left; font-size: 40px;">phone</mat-icon></a>
+      <a style="color:black; font-size: medium;">Ciara Naidoo</a>
+      <a href = "https://wa.me/+27614898149" ><mat-icon style="float:right; font-size: 40px;"  >message</mat-icon></a>
+    </div> 
+  </div>
+
+  <h4 #nav3>Test Nav</h4>

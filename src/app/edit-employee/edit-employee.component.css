@@ -1,0 +1,201 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* img{
+    border-radius: 20%;
+    margin-right:75%;
+    padding: 1px;
+    margin-top: -40vh;
+    margin-bottom: 10vh;
+    position:sticky;
+    
+} */
+/* main{
+    margin-left: 50%;
+    margin-right: 10%;
+} */
+/* form {
+    padding-top: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin: .5em 0;
+    font-weight: bold;
+  } */
+
+/* #test_list:hover{
+    background-color: lightgrey;
+} */
+li:hover{
+    background-color: lightgrey;
+}
+
+/* input:hover{
+    background-color: lightgrey;
+} */
+#test_list{
+    border: none;
+}
+input{
+    border: none;
+    padding: 10px;
+    margin: auto;
+}
+
+#lab-nam{
+color: white;
+/* margin-left: -100px; */
+}
+
+
+#card-body{
+    background-color: #1f99eb;
+}
+#div-doc{
+    background-color: rgb(235, 235, 235);
+
+}
+
+.vertical-menu {
+    width: 200px;
+    margin-top: 0vh;
+  }
+  
+  .vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc;
+
+  }
+  
+  .vertical-menu a.active {
+    background-color: #1f99eb;
+    color: white;
+  }
+
+#img-emp{
+    
+    position:static;
+    border-radius: 100px;
+    margin-top: -2vh;
+    /* margin: auto; */
+    /* min-width: 1%;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 1%; */
+    
+    
+}
+ h3{
+    margin-top: auto;
+    
+    position:static;
+} 
+  
+
+#con-fluid{
+    background-color: #1f99eb;
+    /* width: 500px; */
+    padding-top:5px;
+    /* margin-top: -250px; */
+    /* overflow-y: auto; */
+    /* max-height: 20vh;
+    min-height: 10vw;
+    margin-bottom: -50px; */
+
+    
+    /* margin-left: 80%;
+    margin-right: 80%;
+    margin-bottom: 80%;
+    margin-top: 80%; */
+
+} 
+#div-2{
+    /* margin-top: 0%; */
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20%;
+    position: static;
+    /* background-color:red; */
+}
+
+
+
+
+
+
+#status{
+    margin-left: 73px;
+    position: inherit;
+    border-radius: 10px;
+    border-color: rgb(217, 218, 219);
+}
+
+#btn-save{
+    margin-left: 135px;
+    position:inherit;
+    padding: 1px;
+    width: 176px;
+    border-color: rgb(217, 218, 219);
+    border-radius: 10px;
+}
+
+form{
+    background-color: #1f99eb;
+    
+}
+/* #card-form{
+    /* background-color: blue; 
+    margin-top: 10%;
+    margin-left: -200px;
+    margin-right: 20%;
+    
+} */
+#wrapper{
+    word-spacing: 20%;
+    background-color: rgb(28, 126, 238);
+    /* margin-top: 50%; */
+    border-radius: 5%;
+    padding: 5px;
+    word-spacing: 20px;
+    width: 1000px;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+    height: 10vh;
+    margin-top: 20%;
+    margin-bottom: 10%;
+    overflow-y: auto;
+    /* overflow-x: auto; */
+}
+#edit-head{
+    height: fit-content;
+}
+
+/* td{
+    word-spacing: 10px;
+} */
+#table-light{
+    width: 50vw;
+    /* border-color: rgb(62, 247, 6); */
+    word-spacing: auto;
+}
+#input-text{
+    /* width: min-content; */
+    border-color: black;
+    height: 30px;
+    /* margin-left: -50px; */
+    position: static;
+    /* float:inherit; */
+}
+
+
+#acc-details-id6{
+    word-spacing: 1px;
+}

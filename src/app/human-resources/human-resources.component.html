@@ -1,0 +1,99 @@
+<!-- <p>human-resources works!</p> -->
+<mat-toolbar >
+  <button mat-icon-button *ngIf="sidenav.mode==='over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+
+  Matrix App
+
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+  
+  <mat-sidenav #sidenav="matSidenav">
+
+
+    <img id = "img-side-logo" class ="avatar mat-elevation-z8" src="./assets/image/bmw-m5-cs-ai-01.jpg.asset.1611072239688.jpg"/>
+
+    <h4 class="name" >Meshailen</h4>
+    <p class="designation">Chief Technology Officer</p>
+
+    <mat-divider></mat-divider>
+    <!--Home   -->
+    <button mat-button class="menu-button" routerLink="/WorkerDetails">
+      <mat-icon>home</mat-icon>
+      <span>Dashboard</span>
+      
+    </button >
+    <br>
+    <!-- Employee -->
+    <button mat-button class="menu-button" routerLink="/mod">
+      <mat-icon>person</mat-icon>
+        <span>Employee</span>
+    </button>
+    <br>
+    <button mat-button class="menu-button" routerLink="/HumanResources">
+      <mat-icon>group</mat-icon>
+        <span>Human Resources</span>
+    </button>
+    <br>
+    <!-- Accounts -->
+    <button mat-button class="menu-button" routerLink="/EmpAccounts">
+      <mat-icon routerLink="/EmpAccounts">account_circle</mat-icon>
+        <span>Accounts</span>
+
+    </button>
+    <br>
+    <!-- Projectss -->
+    <button mat-button class="menu-button" routerLink="/CibaProjects">
+      <mat-icon >ballot</mat-icon>
+        <span >Projects</span>
+    </button>
+    <br>
+    
+  </mat-sidenav>
+<br>
+<div class="vertical-menu" style="position: fixed; margin-top: 20vh">
+    <br>
+      <a button (click)= "scrollToElement(nav1)" >MIE - Addendum</a>
+      <a button (click)= "scrollToElement(nav2)">MIE - FOO</a>
+      <a button (click)= "scrollToElement(nav3)">Contracts</a>
+      <!-- <a button (click)= "scrollToElement(nav4)">Issues</a> -->
+      <a button (click)= "scrollToElement(nav5)">Reports</a>
+    <br>
+  </div>
+
+<div style="background-color: rgb(167, 220, 255);height: 80vh;border-radius: 8px;">
+    <h3 style="color:white ; text-align: center;background-color: rgb(167, 220, 255)" >Human Resources</h3>
+    <div>
+        <div class="container" style="height: 10vh; height:max-content; overflow-y:scroll;height: 50vh;width: 60vw;" >
+            <div class="row" >
+              <div class="col" style="border-radius: 8px;padding: 12%;"#nav1>
+                <app-accounts ></app-accounts>
+              </div>
+              <div class="col order-12" style="border-radius: 8px;padding: 12%;" #nav2>
+                <app-foo></app-foo>
+              </div>
+              <div class="col order-12" style="border-radius: 8px;padding: 12%;"#nav3>
+                <app-contracts></app-contracts>
+                
+              </div>
+              <div class="col order-12" style="border-radius: 8px;padding: 12%;"#nav4>
+                <app-issues></app-issues>
+                <!-- <app-po></app-po> -->
+              </div>
+              <div class="col order-12" style="border-radius: 8px;padding: 12%;"#nav5>
+                <!-- <app-payslip></app-payslip> -->
+                <app-reports></app-reports>
+              </div>
+              
+            </div>
+        </div>
+    
+</div>

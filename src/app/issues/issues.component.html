@@ -1,0 +1,40 @@
+<!-- Foo -->
+<h3 style="color: aliceblue;">Issues:</h3>
+<input [(ngModel)]="searchText" type="text" placeholder = "Search Employees"class="form-control" placeholder="Search"style="margin: 10px auto; width: max-width; position: static;">
+<div class="row">
+    <div class="col-8">
+      <label class="btn btn-default p-0">
+        <input style="color: aliceblue;" type="file" (change)="selectFile($event)" />
+      </label>
+    </div>
+  
+    <div class="col-4">
+      <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()" style="background-color: rgb(0, 153, 255); border-color: rgb(0, 153, 255);">
+        Upload
+      </button>
+    </div>
+  </div>
+  
+  <div *ngIf="currentFile" class="progress my-3">
+    <div
+      class="progress-bar progress-bar-info progress-bar-striped"
+      role="progressbar"
+      attr.aria-valuenow="{{ progress }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: progress + '%' }"
+    >
+      {{ progress }}%
+    </div>
+  </div>
+  
+  <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>
+  
+  <div class="card mt-3">
+    <div class="card-header">List of Files</div>
+    <ul class="list-group list-group-flush" style="overflow-y: scroll; height: 20vh; border-radius: 8px;">
+      <li *ngFor="let file of fileInfos | async | employeeFilterPipe:searchText" class="list-group-item" >
+        <a  href="{{ file.url }}">{{ file.name }}</a>
+      </li>
+    </ul>
+  </div>

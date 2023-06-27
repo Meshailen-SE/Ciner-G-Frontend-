@@ -1,0 +1,183 @@
+/* @import "bootstrap/dist/css/bootstrap.min.css"; */
+/* @import "bootstrap/dist/css/bootstrap.min.css"; */
+div {
+    /* width: auto; */
+    background-color:rgb(226, 226, 226);
+    padding: auto;
+    /* margin: auto; */
+    font-size: 16px;
+    border-radius: 8px;
+    
+    margin-left: -250px;
+    margin-left: 10%;
+    
+    
+  }
+  
+td{
+    letter-spacing: normal;
+    /* margin-top: 1em; */
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+}
+a{
+    letter-spacing: normal;
+    /* margin-top: 1em; */
+    /* padding: 20px; */
+    font-size: 16px;
+    border: none;
+}
+a:hover{
+    background-color: #1f99eb;
+    border-radius: 8px;
+}
+th{
+    /* padding: auto; */
+    /* margin: auto; */
+    font-size: 16px;
+    color: white;
+    /* font-style: normal; */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#edit-btn{
+    background-color: rgb(248, 170, 1);
+    /* margin: auto; */
+    padding: 8px;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#edit-btn:hover{
+    background-color: rgb(248, 203, 1);
+}
+
+#delete-btn{
+    background-color: rgb(248, 58, 58);
+    /* margin: auto; */
+    padding: 8px;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#delete-btn:hover{
+    background-color: rgb(248, 10, 10);
+}
+
+#wrapper{
+    margin-left: 1%;
+    margin-right: 8%;
+    width: 100%;
+    overflow-y: auto;
+    /* overflow-x: auto; */
+    max-height: 80vh;
+    max-width: 80vw;
+    min-width: 40vw;
+    min-height: 80vh;
+    margin-bottom: -50px;
+}
+
+nav{
+    margin: auto;
+}
+
+/* table{
+    margin-left: 20%; 
+
+} */
+
+tr{
+    background-color: rgb(226, 226, 226);
+    border: none;
+    margin: auto;
+    
+}
+
+#tr-header{
+    background-color: #1f99eb;
+    border-radius: 8px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+tr:nth-child(2n+2){
+    background-color: rgb(214, 214, 214);
+    
+}
+
+
+#btn-add{
+    /* margin-left: 1100px;
+    margin-bottom: 50px; */
+    background-color: rgb(3, 175, 40);
+    border: none;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    /* border-radius: 8px; */
+    top: 50px;
+    
+}
+
+#btn-add:hover{
+    background-color: rgb(1, 248, 1);
+    color: black;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#span-add{
+    margin-right: 10px;
+    margin-bottom: auto;
+    padding: 15px;
+    font-size: 15px;
+    position: relative;
+    top: -5px;
+    /* background-color: rgb(103, 231, 44); */
+}
+
+#link-name{
+    position: relative;
+    /* top: 40px; */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#link-name:hover{
+    background-color: grey;
+    /* border-radius: 8px; */
+    /* padding: 10%; */
+}
+
+
+/* td[status-log="true"]{
+    /* background-color: green; 
+    color: green;
+} 
+/* style={{"backgroundColor": `${s.status === "true" ? 'green':'red'}`}} */
+/* tr{
+    display:inline;
+    padding:1em;
+    margin:1em;
+    background-color: blue;
+
+} */
+/* .selected{
+    background-color: red;
+} */

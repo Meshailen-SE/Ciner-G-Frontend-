@@ -1,0 +1,55 @@
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+#container{
+    background-color: rgb(197, 197, 197);
+}
+#mainPicture{
+    /* margin-left: 30%;
+    margin-right: auto; */
+    /* width: 20%;
+    height:20%;  */
+    /* margin-left: 45vw;
+    margin-top: -50vh; */
+    width: 70vw;
+    height: 90vh;
+    border-radius: 8px;
+}
+/* form{ */
+    /* margin-left: 30%;
+    margin-top: -2vh; */
+
+/* } */
+
+input{
+    /* padding: auto;
+    min-width: min-content;
+    max-width: fit-content;
+    margin-left: 20%; */
+    min-width: min-content;
+    max-width: fit-content;
+    margin-left: 5%;
+}
+br{
+    height: 40px;
+}
+/* button{
+    margin-right: 30vw;
+    margin-top: -3vh;
+    height: 7vh;
+    width: 17vw;
+} */
+
+form{
+    margin-left: 10%;
+}
+button{
+    margin-left: 7%;
+}
+h3{
+    margin-left: 7%;
+}
+#imainPicture{
+    width: 20vw;
+    height: 20vh;
+    border-radius: 8px;
+}

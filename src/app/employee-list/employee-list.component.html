@@ -1,0 +1,45 @@
+
+
+Search : <input [(ngModel)]="searchText" type="text" placeholder = "Search Employees"class="form-control" placeholder="Search"style="margin: 10px auto; width: 10vw; position: static;">
+<!-- <img src="https://images.unsplash.com/photo-1621655543673-378d71be2a06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"  height="150" width="150" alt="Avatar"> -->
+
+<div class="container-fluid" id="wrapper" >
+
+    
+    
+    <table class="table table-light">
+        
+        <thead class="thead-light">
+            <tr id="tr-header">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Email Address</th>
+                <th>Status</th>
+                <a><button id="btn-add" >
+                    <mat-icon class="nav-link" [routerLink]="['/createEmployee']">add_circle</mat-icon>
+                    <span id="span-add" [routerLink]="['/createEmployee']"> New Employee</span>
+                </button></a>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of employees | employeeFilterPipe:searchText">
+                <td >{{s.id}}</td>
+                <td id = "link-name" (click)="updateEmployee(s.id)" (click)="edit(employee)" >{{s.name}}</td>
+                <td>{{s.age}}</td>
+                <td>{{s.phone}}</td>
+                <td>{{s.address}}</td>
+                <td id="status-log">{{s.status}}</td>
+                <td>
+                    <!-- <button class="btn btn-warning" style="margin-right: 5px;"
+                        [routerLink]="['/updateEmployeeform',s.id]" (click)="edit(employee)" id="edit-btn">Edit</button> -->
+                        <button (click) = "updateEmployee(s.id)" class = "btn btn-info"> Update</button>
+                    <button class="btn btn-danger" (click)="deleteEmployee(s.id)" id="delete-btn">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <router-outlet></router-outlet>
+</div>
